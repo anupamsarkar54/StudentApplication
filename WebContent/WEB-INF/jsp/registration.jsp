@@ -1,10 +1,22 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-
+	<script language="javascript" type="text/javascript">
+       
+        function validate(){
+        	 var passid = document.registration.name.value;
+        	 	if(passid == 'anupam'){
+        	 		
+        	 		alert(passid)
+        	 	}else{
+        	 		alert('fail')
+        	 	}
+         }
+        
+      </script>
 </head>
 <body>
-  <form:form  action="enroll"  method="post" modelAttribute="student"> 
+  <form:form  action="enroll" name="registration" method="post" modelAttribute="student"> 
 <!--<form action="enroll" name="StudentRegistration" method="post" > -->
 <table cellpadding="2" width="20%" bgcolor="99FFFF" align="center"
 cellspacing="2">
@@ -109,7 +121,7 @@ id="personaladdress" size="30"></td>
 </tr>
 <tr>
 <td><input type="reset"></td>
-<td colspan="2"><input type="submit" value="Submit Form" /></td>
+<td colspan="2"><input type="button" value="Submit Form" onclick="validate()" /></td>
 </tr>
 </table>
 <!--</form>-->
