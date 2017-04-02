@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.student.model.Student;
+import com.student.hibernet.model.Student;
 
 public class StudentMapper implements RowMapper<Student>{
 	

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.student.dao.StudentDao;
-import com.student.model.Student;
+import com.student.hibernet.model.Student;
 
 @Controller
 public class SubmitStudentController {
@@ -23,7 +23,7 @@ public class SubmitStudentController {
 		String result1 = "";
 		System.out.println(student.getName());
 		
-		if(student.getName().equalsIgnoreCase("anupam")){
+		if(!(student.getName().isEmpty())){
 			result1 = dao.addStudent(student);
 		}else{
 			result1= "failure";

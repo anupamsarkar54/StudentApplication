@@ -5,18 +5,16 @@
        
         function validate(){
         	 var passid = document.registration.name.value;
-        	 	if(passid == 'anupam'){
-        	 		
-        	 		alert(passid)
-        	 	}else{
-        	 		alert('fail')
+        	 	if(passid == ""){
+        	 		alert('Please insert name')
+        	 		return false;
         	 	}
          }
         
       </script>
 </head>
 <body>
-  <form:form  action="enroll" name="registration" method="post" modelAttribute="student"> 
+  <form:form  action="enroll" name="registration" method="post" modelAttribute="student" onsubmit="return validate()"> 
 <!--<form action="enroll" name="StudentRegistration" method="post" > -->
 <table cellpadding="2" width="20%" bgcolor="99FFFF" align="center"
 cellspacing="2">
@@ -121,7 +119,7 @@ id="personaladdress" size="30"></td>
 </tr>
 <tr>
 <td><input type="reset"></td>
-<td colspan="2"><input type="button" value="Submit Form" onclick="validate()" /></td>
+<td colspan="2"><input type="submit" value="Submit"  /></td>
 </tr>
 </table>
 <!--</form>-->

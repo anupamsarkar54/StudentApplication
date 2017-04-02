@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.student.dao.StudentDao;
-import com.student.model.Student;
+import com.student.hibernet.model.Student;
 
 
 
@@ -41,12 +41,13 @@ public class WelComeController {
 	}
 	
 	@RequestMapping(value="/getAllStudent",method = RequestMethod.GET)
-	public @ResponseBody List<Student> getAllStudent(){
+	public @ResponseBody ModelAndView getAllStudent(){
 	
-//		Student student = dao.getStudent(1);
+		List<Student> studentList = dao.getAllStudent();
 //		String message = "Hellow !!!!" + student.getName();
 //		return new ModelAndView("welcome","message",message);
-		return populateDummyUsers();
+		//return populateDummyUsers();
+		return new ModelAndView("success","studentList",studentList);
 		
 	}
 	
